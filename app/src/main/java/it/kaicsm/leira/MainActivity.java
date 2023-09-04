@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         public void onReceive(Context ctx, Intent intent) {
           // TODO: Implement this method
           if ("get_message".equals(intent.getAction())) {
-            // Eu quero receber essa mensagsm a cada 1 segundo
             message = intent.getStringExtra("message");
             Log.d(TAG, message);
           } else {

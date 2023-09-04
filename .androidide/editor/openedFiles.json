@@ -4,14 +4,14 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/src/main/java/it/kaicsm/leira/core/ClientService.java",
       "selection": {
         "end": {
-          "column": 0,
+          "column": 22,
           "index": -1,
-          "line": 98
+          "line": 40
         },
         "start": {
-          "column": 0,
+          "column": 15,
           "index": -1,
-          "line": 98
+          "line": 40
         }
       }
     },
@@ -34,14 +34,14 @@
       "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/src/main/java/it/kaicsm/leira/MainActivity.java",
       "selection": {
         "end": {
-          "column": 0,
+          "column": 57,
           "index": -1,
-          "line": 0
+          "line": 39
         },
         "start": {
-          "column": 0,
+          "column": 57,
           "index": -1,
-          "line": 0
+          "line": 39
         }
       }
     }
