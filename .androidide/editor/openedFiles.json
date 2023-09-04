@@ -1,7 +1,22 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/proguard-rules.pro",
+      "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/src/main/java/it/kaicsm/leira/core/ClientService.java",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": -1,
+          "line": 98
+        },
+        "start": {
+          "column": 0,
+          "index": -1,
+          "line": 98
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/src/main/java/it/kaicsm/leira/core/Client.java",
       "selection": {
         "end": {
           "column": 0,
@@ -16,7 +31,7 @@
       }
     },
     {
-      "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/build.gradle.kts",
+      "file": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/src/main/java/it/kaicsm/leira/MainActivity.java",
       "selection": {
         "end": {
           "column": 0,
@@ -31,5 +46,5 @@
       }
     }
   ],
-  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/build.gradle.kts"
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Status Leira ETE/app/src/main/java/it/kaicsm/leira/MainActivity.java"
 }

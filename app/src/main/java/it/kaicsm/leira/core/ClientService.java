@@ -29,20 +29,16 @@ public class ClientService extends Service {
   public void onCreate() {
     super.onCreate();
 
-    // Inicialize o cliente aqui
     client = new Client(IP, PORT);
 
-    // Crie uma nova HandlerThread para lidar com as mensagens em segundo plano
     backgroundThread = new HandlerThread("ClientServiceBackground");
     backgroundThread.start();
 
-    // Crie um novo Handler associado à HandlerThread para enviar as mensagens para a Activity (ou
-    // outro componente)
     messageHandler =
         new Handler(backgroundThread.getLooper()) {
           @Override
           public void handleMessage(android.os.Message msg) {
-            // Receba a mensagem do servidor e acesse a função getMessage() do cliente
+            // Receber as mensagem do servidor e acesse a função getMessage() do cliente
             if (client.getMessage() != null) {
               String message = client.getMessage();
 
@@ -52,14 +48,12 @@ public class ClientService extends Service {
                     NotificationFactory.createNotification(
                         getApplicationContext(), message + "°C Reafriar leira!", R.drawable.leira);
 
-                // Use um NotificationManager para exibir a notificação
                 NotificationManager notificationManager =
                     (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-                // Defina um ID exclusivo para a notificação
                 int notificationId = 501;
 
-                // Exiba a notificação
+                // Exibir a notificação
                 notificationManager.notify(notificationId, notification);
               }
 
@@ -78,21 +72,20 @@ public class ClientService extends Service {
         NotificationFactory.createNotification(getApplicationContext(), "Serviço em execução", R.drawable.leira);
     startForeground(500, notificaton);
 
-    // Inicie uma tarefa em segundo plano para buscar mensagens do servidor a cada 1 segundo
+    // Iniciar uma tarefa em segundo plano para buscar mensagens do servidor a cada 1 segundo
     messageHandler.postDelayed(
         new Runnable() {
           @Override
           public void run() {
-            // Chame a função que lida com as mensagens do servidor
             messageHandler.sendEmptyMessage(0);
 
-            // Agende a próxima execução após 1 segundo
+            // Agendae a próxima execução
             messageHandler.postDelayed(this, 1000);
           }
         },
         1000);
 
-    // Inicie o Client como um Runnable em uma Thread separada
+    // Iniciar o Client como um Runnable em uma Thread separada
     Thread clientThread = new Thread(client);
     clientThread.start();
 
@@ -104,7 +97,6 @@ public class ClientService extends Service {
   public void onDestroy() {
     super.onDestroy();
 
-    // Pare a HandlerThread quando o serviço for destruído
     if (backgroundThread != null) {
       backgroundThread.quitSafely();
     }
